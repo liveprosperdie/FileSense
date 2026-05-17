@@ -2,8 +2,8 @@ import config
 
 
 def get_folder(ext):
-    for folder in config.file_types:
-        if ext in config.file_types[folder]:
+    for folder in config.FILE_TYPES:
+        if ext in config.FILE_TYPES[folder]:
             return folder
     return "others"
 
