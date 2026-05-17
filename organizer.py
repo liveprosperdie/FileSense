@@ -1,5 +1,6 @@
 import config
 import os
+import shutil
 
 
 def get_folder(ext):
@@ -21,5 +22,17 @@ def organise(folder_path):
     else:
         for file in file_entries:
             file_path=os.path.join(folder_path,file)
-            extension=os.path.splitext(file_path)
+            _,extension=os.path.splitext(file_path)
             folder_name=get_folder(extension)
+            target_folder_path=os.path.join(folder_path,folder_name)
+            try:
+                os.makedirs(target_folder_path, exist_ok=True)
+                shutil.move(file_path,target_folder_path)
+            except PermissionError:
+                print("Error: You do not have permission to create a folder here.")
+            except FileExistsError:
+                print("Folder name already in use")
+            except shutil.Error:
+                print (f"{file} can't be moved")
+            
+                
