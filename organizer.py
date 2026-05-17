@@ -8,6 +8,7 @@ def get_folder(ext):
             return folder
     return "others"
 
+
 def organise(folder_path):
     try:
         file_entries=[f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path,f))]
@@ -20,3 +21,5 @@ def organise(folder_path):
     else:
         for file in file_entries:
             file_path=os.path.join(folder_path,file)
+            extension=os.path.splitext(file_path)
+            folder_name=get_folder(extension)
