@@ -1,3 +1,4 @@
+
 FILE_TYPES={
     "images":[".jpg",".png",".gif",".svg",".webp"],
     "videos":[".mp4",".mkv",".mov",".avi"],
@@ -6,4 +7,5 @@ FILE_TYPES={
     "code":[".py",".js",".html",".css",".java",".c"],
     "archives":[".zip",".rar",".tar",".gz"],
     "others": None
+
 }
