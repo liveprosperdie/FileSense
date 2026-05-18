@@ -11,6 +11,7 @@ def main():
     if args.mode == "manual":
         organizer.organise(folder_path)
     elif args.mode == "watch":
+        organizer.organise(folder_path)
         watcher.observe(folder_path)
     else:
         print("Wrong args passed please check help")
